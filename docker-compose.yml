@@ -1,0 +1,10 @@
+version: "3.3"
+services:
+  python_data:
+    build: .
+    container_name: python_data
+    ports:
+      - "5000:5000"
+      - "8000:8000"
+    volumes:
+      - ./:/python_data
