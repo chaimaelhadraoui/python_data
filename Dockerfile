@@ -5,6 +5,7 @@ WORKDIR /python_data
 EXPOSE 5000/tcp 8000/tcp
 ENV FLASK_APP=/python_data/src/api/app.py 
 ENV FLASK_RUN_HOST=0.0.0.0
+RUN apt-get update && apt-get install curl -y
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 RUN mkdir /root/.streamlit
