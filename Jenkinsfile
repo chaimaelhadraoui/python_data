@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image */
 
-        app = docker.build("chaimaelhadraoui/python_data")
+        app = docker.build("chaimaelhadraoui/python_data:latest")
     }
 
     stage('Test image') {
@@ -39,6 +39,6 @@ node {
                 echo "Trying to Push Docker Build to DockerHub"
     }
 	stage('Deploy image') {
-                sh("docker-compose up")
+                sh("docker run -d -p 5000:5000 -p 8000:8000 chaimaelhadraoui/python_data:latest")
     }
 }
