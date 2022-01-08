@@ -23,7 +23,7 @@ node {
     stage('Test code') {
         
         app.inside {
-            echo "pytest"
+            sh("pytest")
         }
     }
 
